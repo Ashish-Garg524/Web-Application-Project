@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#id3{
+    padding: 0 0 10px 0;
+
+}
+#navbarSupportedContent li a{
+    color: black;
+    background-color:blanchedalmond;
+}
+
+#id1 {
+    width: 100%px;
+    height: 100vh;
+    background: url('img1.jpg') no-repeat;
+    background-size:cover;
+    background-position: center;
+
+}
+
+.col-3{
+    background-color: lightgray;
+   text-align: center;
+   border: 1px solid black;
+   border-radius: 3px;
+    
+}
+
+#id2{
+    margin-top: 100px;
+}
+
+#id4{
+    height: 600px;
+    margin-top:  100px;
+    padding: 0px;
+}
+#id4 col-6{
+    
+    align-items: center;
+}
+#id5{
+    text-align: center;
+    padding-top: 250px;
+}
+#id6{
+    
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#id6 .row {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+#id7 {
+    margin-top: 100px;
+    
+}
+#id7 button{
+    margin-left: 600px ;  
+    padding: 10px 10px 10px 10px;
+}
+#id7 button h5{
+      
+    align-items: center;
+}
+#id7 a{
+    text-decoration: none;
+    color: white;
+}
+
+.foot li a{
+    
+    color:whitesmoke;
+   text-decoration: none;
+}
+
+.container py-2 h1{
+    padding:10px 0 0 0;
+}
