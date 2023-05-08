@@ -3,10 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="vidivewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
     <link rel="stylesheet" href="style1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Supplier Registration</title>
+    <style>
+      svg {
+            background-color: grey;
+         }
+
+         .slice text {
+            font-size: 12px;
+            fill: black;
+            text-anchor: middle;
+         }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -74,6 +86,60 @@
         </div>
       </div>
       </div>
+<div class="container-fluid" id="id10">
+<script>
+// var sub1 = parseInt(prompt("Enter number of students in Subject 1:"));
+// var sub2 = parseInt(prompt("Enter number of students in Subject 2:"));
+// var sub3 = parseInt(prompt("Enter number of students in Subject 3:"));
+// var sub4 = parseInt(prompt("Enter number of students in Subject 4:"));
+// var sub5 = parseInt(prompt("Enter number of students in Subject 5:"));
+
+var total = 1800 + 2500 + 3500 + 5600 + 8500;
+var data = [
+  { subject: "Subject 1", value: 1800 / total },
+  { subject: "Subject 2", value: 2500 / total },
+  { subject: "Subject 3", value: 3500 / total },
+  { subject: "Subject 4", value: 5600 / total },
+  { subject: "Subject 5", value: 8500 / total },
+];
+
+var width = 400;
+var height = 400;
+var radius = Math.min(width, height) / 2;
+
+var color = d3.scaleOrdinal()
+  .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
+
+var arc = d3.arc()
+  .outerRadius(radius - 10)
+  .innerRadius(0);
+
+var pie = d3.pie()
+  .sort(null)
+  .value(function(d) { return d.value; });
+
+var svg = d3.select("body")
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height)
+  .append("g")
+  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var g = svg.selectAll(".arc")
+  .data(pie(data))
+  .enter().append("g")
+  .attr("class", "arc");
+
+g.append("path")
+  .attr("d", arc)
+  .style("fill", function(d) { return color(d.data.subject); });
+
+g.append("text")
+  .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+  .attr("dy", ".35em")
+  .text(function(d) { return d3.format(".0%")(d.data.value); });
+    </script>
+    </div>
 
       <div class="container-fluid" id="id4">
         <div class="row" >
